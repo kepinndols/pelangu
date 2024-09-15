@@ -1,0 +1,716 @@
+:root {
+  --pr-color: #fef3e2;
+  --sc-color: #bec6a0;
+}
+
+body {
+  background: linear-gradient(175deg, var(--pr-color), var(--sc-color));
+  height: 100vh;
+  font-family: "Zain";
+}
+
+.container-fluid {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Menengahkan secara horizontal */
+  align-items: center; /* Menengahkan secara vertikal */
+  flex-direction: column;
+  height: 100%;
+}
+
+.toggler {
+  position: fixed;
+  top: 10px;
+  left: -10vh;
+  width: 40vh;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggler span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 2px;
+  background-color: #708871;
+  margin-bottom: 5px;
+}
+
+.toggler span:nth-child(1) {
+  margin-top: -7px;
+  height: 3px;
+}
+
+.toggler span:nth-child(2) {
+  margin-top: 0;
+
+  height: 3px;
+}
+
+.toggler span:nth-child(3) {
+  margin-top: 7px;
+
+  height: 3px;
+}
+
+.hero {
+  position: relative;
+}
+.user {
+  display: flex;
+  flex-direction: column; /* Mengatur layout jadi kolom agar .logout bisa berada di bawah */
+  align-items: center;
+  position: fixed;
+  top: 3%;
+  right: 4%;
+  z-index: 1000;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: row; /* Membuat user-img dan user-info berada dalam satu baris */
+  align-items: center;
+  gap: 10px; /* Jarak antar elemen */
+}
+
+.user-img img {
+  margin-bottom: 10px;
+  border-radius: 100%;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row; /* Membuat h3 dan v-img sebaris */
+  align-items: center;
+  gap: 10px; /* Jarak antara h3 dan tombol .v-img */
+}
+
+.user .v-img {
+  background: transparent;
+  border: none;
+}
+
+.user .v-img img {
+  width: 2rem; /* Sesuaikan ukuran tombol gambar */
+  height: 2rem;
+  object-fit: scale-down;
+}
+
+.user h3 {
+  font-size: 2.5rem;
+  color: #708871;
+}
+
+.logout {
+  display: none; /* Sembunyikan logout secara default */
+  margin-top: 10px; /* Spasi antara button v-img dan logout */
+}
+
+.logout input {
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  background-color: #708871;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transisi smooth */
+}
+.logout input:hover {
+  background-color: transparent; /* Warna background menjadi transparan */
+  color: #708871; /* Warna font menjadi hijau gelap */
+  font-size: 2.3rem;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -40vh;
+  width: 40vh;
+  height: 100vh;
+  background-color: #708871;
+  transition: all 0.3s ease;
+  z-index: 120;
+}
+
+.sidebar-content {
+  padding: 0;
+  text-align: center;
+  margin: 0;
+}
+
+.sidebar .title {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.sidebar .subtitle {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 1.3rem;
+}
+
+.sidebar ul li.active {
+  background-color: #859e86;
+  color: #fff;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.sidebar ul li a .icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.sidebar.show {
+  left: 0;
+}
+
+.toggler.show {
+  left: 260px;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.section2 {
+  position: relative;
+  left: 0vw;
+  transition: all 1s ease;
+}
+
+.section2.show {
+  left: 10vw;
+  transition: all 1s ease;
+}
+
+.section2 h1 {
+  color: #708871;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.box {
+  padding: 1rem;
+  height: 543px;
+  width: 1160px;
+  background-color: #fef3e2;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.box h2 {
+  font-size: 2.7rem;
+  color: #708871;
+}
+.box h3 {
+  font-size: 2rem;
+  color: #708871;
+  margin: 30px 0px;
+}
+.garis {
+  background-color: #708871;
+  height: 2px;
+  width: 100%;
+  position: relative; /* atau gunakan absolute sesuai konteks */
+  z-index: 1; /* pastikan z-index cukup besar jika dibutuhkan */
+  border: #708871;
+  color: #fef3e2;
+}
+
+.card {
+  border: none;
+  background-color: transparent;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0%;
+}
+.card1 {
+  height: 200px;
+  width: 345px;
+  background-color: #859e86;
+  margin: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding: 0px 3%;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.card2 {
+  height: 200px;
+  width: 345px;
+  background-color: #859e86;
+  margin: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding: 0px 3%;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.card3 {
+  height: 200px;
+  width: 345px;
+  background-color: #78a083;
+  margin: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding: 0px 3%;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.card1 h1 {
+  color: #fff;
+  margin: 1.5rem 0;
+  font-weight: bolder;
+}
+.card1 p {
+  color: #fff;
+  font-size: 2rem;
+}
+.card2 h1 {
+  color: #fff;
+  margin: 1.5rem 0;
+  font-weight: bolder;
+}
+.card2 p {
+  color: #fff;
+  font-size: 2rem;
+}
+.card3 h1 {
+  color: #fff;
+  margin: 1.5rem 0;
+  font-weight: bolder;
+}
+.card3 p {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.aksi {
+  margin: 0;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.tambah {
+  height: 35px;
+  background-color: #708871;
+  width: 110px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.4rem;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s ease;
+}
+.tambah:hover {
+  padding: 0;
+  height: 35px;
+  background-color: #fef3e2;
+  width: 110px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #708871;
+  border-radius: 20%;
+  border: none;
+  box-shadow: none;
+  rotate: 360deg;
+}
+
+.kurang {
+  height: 35px;
+  background-color: #fef3e2;
+  width: 110px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.4rem;
+  border: none;
+  text-decoration: none;
+  color: #708871;
+  transition: all 0.4s ease;
+}
+.kurang:hover {
+  height: 35px;
+  background-color: #708871;
+  width: 110px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.4rem;
+  border: none;
+  text-decoration: none;
+  color: #fef3e2;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Overlay yang membuat background menjadi gelap */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Warna hitam dengan opacity */
+  z-index: 1000;
+  display: none; /* Secara default disembunyikan */
+}
+
+/* Pop-up Form */
+.popup-form {
+  padding: 4rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 750px;
+  height: 750px;
+  background-color: #708871;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1100;
+  display: none; /* Secara default disembunyikan */
+  transform: translate(-50%, -50%) scale(0); /* Mulai dari skala 0 (kecil) */
+  opacity: 0; /* Supaya transparan pada awal */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Keyframes untuk scale-up animasi */
+@keyframes scaleUp {
+  0% {
+    transform: translate(-50%, -50%) scale(0); /* Awal kecil */
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1); /* Akhir skala penuh */
+    opacity: 1;
+  }
+}
+
+/* Tampilkan pop-up dengan animasi scale-up */
+.popup-form.show {
+  display: block; /* Tampilkan form */
+  animation: scaleUp 0.5s forwards; /* Terapkan animasi scale-up */
+}
+
+.overlay2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Warna hitam dengan opacity */
+  z-index: 1000;
+  display: none; /* Secara default disembunyikan */
+}
+
+.popup-form2 {
+  padding: 4rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 750px;
+  height: 750px;
+  background-color: #708871;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1100;
+  display: none; /* Secara default disembunyikan */
+  transform: translate(-50%, -50%) scale(0); /* Mulai dari skala 0 (kecil) */
+  opacity: 0; /* Supaya transparan pada awal */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Keyframes untuk scale-up animasi */
+@keyframes scaleUp {
+  0% {
+    transform: translate(-50%, -50%) scale(0); /* Awal kecil */
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1); /* Akhir skala penuh */
+    opacity: 1;
+  }
+}
+
+/* Tampilkan pop-up dengan animasi scale-up */
+.popup-form2.show {
+  display: block; /* Tampilkan form */
+  animation: scaleUp 0.5s forwards; /* Terapkan animasi scale-up */
+}
+
+/* Konten di dalam pop-up */
+.popup-content {
+  text-align: center;
+  color: #fef3e2;
+}
+.popup-content h2 {
+  color: #fef3e2;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.form-nama {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin-top: 3rem;
+}
+
+.form-label-nama {
+  font-size: 2rem;
+}
+
+.input-besar {
+  height: 4rem; /* Atur tinggi input sesuai kebutuhan */
+  font-size: 2rem; /* Bisa tambahkan untuk memperbesar teks juga */
+}
+
+.form-catatan {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin-top: 3rem;
+}
+
+.form-label-catatan {
+  font-size: 2rem;
+}
+
+.button-simpan {
+  background-color: #fff;
+  border: none;
+  color: #7a7a7a;
+  height: 4rem;
+  width: 20rem;
+  margin-top: 4rem;
+  font-size: 2rem;
+}
+
+.footer {
+  width: 1160px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  font-size: 1.7rem;
+  transition: all 2s ease;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  left: 19vw;
+}
+
+.footer.show {
+  left: 25vw; /* Mengubah posisi ketika kelas show diterapkan */
+}
+
+/* Responsif untuk perangkat dengan lebar layar hingga 1200px */
+@media (max-width: 1200px) {
+  .section2 {
+    width: 80%;
+    height: auto;
+  }
+
+  .sidebar {
+    width: auto; /* Mengatur lebar sidebar agar mengisi layar penuh */
+  }
+  .toggler {
+    left: 0;
+    width: 35px;
+    height: 35px;
+  }
+  .user-info-container {
+    position: absolute;
+    width: auto;
+    top: 0;
+    right: 40%;
+  }
+  .user-info-container.show {
+    position: absolute;
+    width: auto;
+    top: 0;
+    right: 40%;
+  }
+  .box {
+    width: 100%; /* Mengatur lebar box agar mengisi penuh layar */
+    max-width: 100%; /* Menghindari box lebih lebar dari kontainer */
+  }
+
+  .footer {
+    width: 100%;
+    left: 0;
+    font-size: 1.5rem; /* Menyesuaikan ukuran font pada footer */
+  }
+}
+
+/* Responsif untuk perangkat dengan lebar layar hingga 992px */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 100%; /* Mengatur lebar sidebar agar mengisi layar penuh */
+    height: auto; /* Menyesuaikan tinggi sidebar secara otomatis */
+    position: relative; /* Menyesuaikan posisi sidebar */
+    left: 0;
+  }
+
+  .user {
+    position: relative;
+    top: auto;
+    right: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toggler {
+    left: 10px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .user-img img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .user-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .logout input {
+    font-size: 1.5rem;
+  }
+
+  .wave img {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+/* Responsif untuk perangkat dengan lebar layar hingga 768px */
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 10px; /* Menambahkan padding pada sisi kiri dan kanan */
+  }
+
+  .section2 h1 {
+    font-size: 2.5rem;
+  }
+
+  .box {
+    padding: 1rem;
+    height: auto;
+    width: 100%;
+  }
+
+  .box h2,
+  .box h3 {
+    font-size: 2rem;
+  }
+
+  .card {
+    flex-direction: column; /* Mengatur card menjadi kolom pada layar kecil */
+  }
+
+  .card div {
+    width: 100%; /* Menyusun card item agar memenuhi lebar kontainer */
+    margin-bottom: 1rem; /* Menambahkan margin bawah */
+  }
+
+  .aksi button {
+    width: 100%; /* Mengatur tombol aksi agar memenuhi lebar kontainer */
+    margin-bottom: 1rem; /* Menambahkan margin bawah */
+  }
+
+  .footer {
+    font-size: 1.3rem;
+  }
+}
+
+/* Responsif untuk perangkat dengan lebar layar hingga 576px */
+@media (max-width: 576px) {
+  .user-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .user-img img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .box {
+    padding: 0.5rem;
+  }
+
+  .box h2,
+  .box h3 {
+    font-size: 1.5rem;
+  }
+
+  .card div {
+    font-size: 1.2rem; /* Menyesuaikan ukuran font card pada layar kecil */
+  }
+
+  .pagination a {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+
+  .footer {
+    font-size: 1.2rem;
+  }
+}

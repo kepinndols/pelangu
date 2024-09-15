@@ -1,0 +1,350 @@
+:root {
+  --pr-color: #fef3e2;
+  --sc-color: #bec6a0;
+}
+
+body {
+  background: linear-gradient(175deg, var(--pr-color), var(--sc-color));
+  height: 100vh;
+  font-family: "Zain";
+}
+
+.container-fluid {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Menengahkan secara horizontal */
+  align-items: center; /* Menengahkan secara vertikal */
+  flex-direction: column;
+  height: 100%;
+}
+
+.toggler {
+  position: fixed;
+  top: 10px;
+  left: -10vh;
+  width: 40vh;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggler span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 2px;
+  background-color: #708871;
+  margin-bottom: 5px;
+}
+
+.toggler span:nth-child(1) {
+  margin-top: -7px;
+  height: 3px;
+}
+
+.toggler span:nth-child(2) {
+  margin-top: 0;
+
+  height: 3px;
+}
+
+.toggler span:nth-child(3) {
+  margin-top: 7px;
+
+  height: 3px;
+}
+
+.hero {
+  position: relative;
+}
+.user {
+  display: flex;
+  flex-direction: column; /* Mengatur layout jadi kolom agar .logout bisa berada di bawah */
+  align-items: center;
+  position: fixed;
+  top: 3%;
+  right: 4%;
+  z-index: 1000;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: row; /* Membuat user-img dan user-info berada dalam satu baris */
+  align-items: center;
+  gap: 10px; /* Jarak antar elemen */
+}
+
+.user-img img {
+  margin-bottom: 10px;
+  border-radius: 100%;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row; /* Membuat h3 dan v-img sebaris */
+  align-items: center;
+  gap: 10px; /* Jarak antara h3 dan tombol .v-img */
+}
+
+.user .v-img {
+  background: transparent;
+  border: none;
+}
+
+.user .v-img img {
+  width: 2rem; /* Sesuaikan ukuran tombol gambar */
+  height: 2rem;
+  object-fit: scale-down;
+}
+
+.user h3 {
+  font-size: 2.5rem;
+  color: #708871;
+}
+
+.logout {
+  display: none; /* Sembunyikan logout secara default */
+  margin-top: 10px; /* Spasi antara button v-img dan logout */
+}
+
+.logout input {
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  background-color: #708871;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transisi smooth */
+}
+.logout input:hover {
+  background-color: transparent; /* Warna background menjadi transparan */
+  color: #708871; /* Warna font menjadi hijau gelap */
+  font-size: 2.3rem;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -40vh;
+  width: 40vh;
+  height: 100vh;
+  background-color: #708871;
+  transition: all 0.3s ease;
+  z-index: 120;
+}
+
+.sidebar-content {
+  padding: 0;
+  text-align: center;
+  margin: 0;
+}
+
+.sidebar .title {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.sidebar .subtitle {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 1.3rem;
+}
+
+.sidebar ul li.active {
+  background-color: #859e86;
+  color: #fff;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.sidebar ul li a .icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.sidebar.show {
+  left: 0;
+}
+
+.toggler.show {
+  left: 260px;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.section2 {
+  position: relative;
+  left: 0vw;
+  transition: all 1s ease;
+}
+
+.section2.show {
+  left: 10vw;
+  transition: all 1s ease;
+}
+
+.section2 h1 {
+  color: #708871;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.box {
+  padding: 1rem;
+  height: 543px;
+  width: 1160px;
+  background-color: #fef3e2;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.box h2 {
+  font-size: 2.7rem;
+  color: #708871;
+}
+.box h3 {
+  font-size: 2rem;
+  color: #708871;
+  margin: 30px 0px;
+}
+.garis {
+  background-color: #708871;
+  height: 2px;
+  width: 100%;
+  position: relative; /* atau gunakan absolute sesuai konteks */
+  z-index: 1; /* pastikan z-index cukup besar jika dibutuhkan */
+  border: #708871;
+  color: #fef3e2;
+}
+/* Menata keseluruhan tabel */
+.table {
+  width: 100%; /* Membuat tabel menggunakan lebar penuh kontainer */
+  border-collapse: collapse; /* Menghilangkan jarak antara border sel */
+  margin: 20px 0; /* Memberikan margin di atas dan bawah tabel */
+}
+
+/* Menata baris header tabel */
+.table thead th {
+  background-color: #708871; /* Warna latar belakang header */
+  color: white; /* Warna teks header */
+  padding: 10px; /* Padding di sekitar teks */
+  text-align: left; /* Menata teks ke kiri */
+  font-weight: bold; /* Menambah ketebalan font */
+  font-size: 2rem;
+}
+
+/* Menata baris body tabel */
+.table tbody td {
+  background-color: #f9f9f9; /* Warna latar belakang sel body */
+  color: #333; /* Warna teks sel body */
+  padding: 10px; /* Padding di sekitar teks */
+  border-bottom: 1px solid #ddd; /* Garis bawah sel */
+  font-size: 1.5rem;
+}
+
+/* Menata baris body tabel saat hover */
+.table tbody tr:hover {
+  background-color: #e0f7fa; /* Warna latar belakang saat hover */
+}
+
+/* Menata baris header tabel saat hover */
+.table thead th {
+  background-color: #708871; /* Warna latar belakang header saat hover */
+  font-size: 1.5rem;
+}
+
+/* Menata nomor urut (kolom pertama) */
+.table th:first-child,
+.table td:first-child {
+  text-align: center; /* Menata teks ke tengah untuk nomor urut */
+}
+/* Menata tombol navigasi */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #708871;
+  padding: 10px 15px;
+  border: 1px solid #708871;
+  border-radius: 5px;
+  margin: 0 5px;
+  position: absolute;
+  bottom: -0;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination a:hover {
+  background-color: #708871;
+  color: white;
+}
+
+/* Membuat tabel responsif */
+@media (max-width: 768px) {
+  .table {
+    display: block; /* Menjadikan tabel sebagai blok agar scroll horizontal */
+    overflow-x: auto; /* Menambahkan scroll horizontal */
+    white-space: nowrap; /* Mencegah teks membungkus */
+  }
+}
+
+.footer {
+  width: 1160px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  font-size: 1.7rem;
+  transition: all 2s ease;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  left: 19vw;
+}
+
+.footer.show {
+  left: 25vw; /* Mengubah posisi ketika kelas show diterapkan */
+}

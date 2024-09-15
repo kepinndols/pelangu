@@ -1,0 +1,147 @@
+:root {
+  --pr-color: #007a49;
+  --font-size-base: 5rem; /* Ukuran font dasar untuk referensi */
+}
+
+body {
+  font-family: "Zain";
+  font-size: var(--font-size-base); /* Mengatur ukuran font dasar */
+  background-color: #567454;
+  background-image: url("assets/img/d.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+a .button-daftar {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem; /* Ukuran font yang lebih besar */
+}
+
+.navbar-brand img {
+  width: 5rem;
+  height: 3rem;
+  object-fit: cover;
+}
+
+.navbar-center {
+  flex-grow: 6;
+  display: flex;
+  justify-content: center; /* Memastikan tombol berada di tengah */
+}
+
+.nav-link {
+  font-size: 5rem; /* Ukuran font yang lebih besar */
+}
+
+.nav-link.active {
+  font-weight: 700;
+}
+
+.button-daftar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 88px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 2rem; /* Ukuran font yang lebih besar */
+}
+
+.button-daftar:hover {
+  background-color: white;
+  color: var(--pr-color);
+  border-radius: 5px;
+}
+
+.button-masuk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 88px;
+  height: 30px;
+  border: none;
+  font-weight: 700;
+  color: var(--pr-color);
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+  font-size: 2rem; /* Ukuran font yang lebih besar */
+}
+
+.button-masuk:hover {
+  background-color: var(--pr-color);
+  color: white;
+  border-radius: 5px;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+}
+
+.lead {
+  font-size: 2rem;
+}
+
+.hero-section h1 {
+  font-size: 5rem; /* Ukuran font yang lebih besar */
+  font-weight: 700;
+}
+
+.form-custom {
+  background-image: linear-gradient(135deg, #708871, #606676);
+}
+
+.btn-cstm {
+  background-color: #007a49;
+  color: white;
+  border: none;
+  font-size: 2rem; /* Ukuran font yang lebih besar */
+}
+
+.btn-cstm:hover {
+  background-color: #005a36;
+  color: white;
+}
+
+.button-daftar1 {
+  background-color: #005f36; /* Warna sesuai tema */
+  border: none;
+  padding: 12px 24px;
+  font-size: 2rem; /* Ukuran font yang lebih besar */
+  font-weight: bold;
+  color: var(--pr-color);
+  text-transform: uppercase;
+  text-decoration: none; /* Hilangkan dekorasi teks */
+  border-radius: 5px; /* Sudut melengkung */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.button-daftar1:hover {
+  background-color: white; /* Warna saat di-hover */
+  color: var(--pr-color);
+}
+
+.button-daftar1:focus {
+  outline: none; /* Hilangkan garis fokus */
+  box-shadow: 0 0 0 3px rgba(0, 122, 73, 0.5); /* Efek shadow saat focus */
+}
+.text-center p {
+  font-size: 2rem;
+}
